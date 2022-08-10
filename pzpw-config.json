@@ -1,0 +1,19 @@
+{
+    "mods": {
+        "WaterDispenser": {
+            "name": "Water Dispenser",
+            "description": "My new mod description."
+        }
+    },
+    "workshop": {
+        "title": "Water Dispenser",
+        "visibility": "public",
+        "mods": [
+            "WaterDispenser"
+        ],
+        "tags": [
+            "Build 41"
+        ],
+        "author": "Konijima"
+    }
+}
