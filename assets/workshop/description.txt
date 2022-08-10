@@ -1,3 +1,29 @@
-My super mod
+[h2]Features[/h2]
+In this mod I try to make everything [b]as Vanilla as possible[/b].
+- Dispenser have 250 unit of water like the vanilla dispenser.
+- Water Jug can be filled with gasoline for a total of 250 units.
+- Vanilla Dispenser automatically converted to custom when loaded in the world.
+- Dispenser start with random amount of water.
+- Time to take and place bottle depend on the amount of water in it.
+- New disabler mod to revert to vanilla water dispenser.
 
-Is super cool
+[h2]Disable/Revert to vanilla[/h2]
+This feature will only work for game 41.72+.
+- Enable `WaterDispenserDisabler` mod (keep it enabled) and disable `WaterDispenser` mod.
+- When a custom dispenser is found it will revert back to vanilla.
+- This mod must be activated alone and kept enabled to revert the custom dispenser back to vanilla.
+- Added this disabler mod for people who would want to stop using water dispenser.
+
+[h2]Languages[/h2]
+- English (EN)
+- French (FR)
+- Spanish (ES)
+- Italian (IT)
+- Polish (PL) by Insers
+- Russian (RU) by BUGS
+
+[h2]My Mods[/h2]
+[url=https://steamcommunity.com/id/konijima/myworkshopfiles/?appid=108600]My Workshop[/url]
+
+[h3]Github:[/h3]
+https://github.com/Konijima/WaterDispenser
