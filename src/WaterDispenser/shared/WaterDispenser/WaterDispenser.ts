@@ -68,8 +68,8 @@ export class WaterDispenser {
                 facing: this.facing
             }
             this.isoObject.setSpriteFromName(spriteName)
-            if (isServer()) this.isoObject.transmitCompleteItemToClients()
-            if (isClient()) this.isoObject.transmitCompleteItemToServer()
+            if (isServer()) this.isoObject.transmitUpdatedSpriteToClients()
+            this.isoObject.transmitModData()
         }
     }
 
@@ -130,11 +130,13 @@ export class WaterDispenser {
 }
 
 loadGridSquare.addListener((square) => {
-    const waterDispenser = WaterDispenser.GetWaterDispenserOnSquare(square)
-
-    if (waterDispenser && waterDispenser.Type === "Vanilla") {
-        waterDispenser.setNewType("Water")
-        waterDispenser.randomizeWaterAmount()
-        waterDispenser.setTainted(false)
+    if (isServer() || !isClient()) {
+        const waterDispenser = WaterDispenser.GetWaterDispenserOnSquare(square)
+    
+        if (waterDispenser && waterDispenser.Type === "Vanilla") {
+            waterDispenser.setNewType("Water")
+            waterDispenser.randomizeWaterAmount()
+            waterDispenser.setTainted(false)
+        }
     }
 })
