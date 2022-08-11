@@ -82,7 +82,7 @@ export class WaterDispenser {
     }
 
     public randomizeWaterAmount() {
-        this.setWaterAmount(ZombRand(WaterDispenser.MaxWaterAmount))
+        this.setWaterAmount(ZombRand(WaterDispenser.MaxWaterAmount / 10, WaterDispenser.MaxWaterAmount))
     }
 
     public getTainted(): boolean {
