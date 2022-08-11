@@ -55,6 +55,7 @@ export class WaterDispenser {
 
         if (!this.isoObject.getModData().waterDispenserInfo) {
             this.isoObject.getModData().waterDispenserInfo = { type, facing }
+            this.isoObject.transmitModData()
         }
     }
 
