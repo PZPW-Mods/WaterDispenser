@@ -49,7 +49,7 @@ onFillWorldObjectContextMenu.addListener((playerNum: number, context: ISContextM
             context.addOptionOnTop(getText("ContextMenu_TakeBottleFromDispenser"), player, doTakeBottle, waterDispenser)
         }
 
-        if (player.DistToSquared(waterDispenser.IsoObject.getX() + 0.5, waterDispenser.IsoObject.getY() + 0.5) < 4) {
+        if (player.DistToSquared(waterDispenser.IsoObject.getX() + 0.5, waterDispenser.IsoObject.getY() + 0.5) < 8) {
             const mainOption = context.addOptionOnTop(getText("ContextMenu_Water_Dispenser"))
             const toolTip = new ISToolTip()
             toolTip.setName(getText("ContextMenu_Water_Dispenser"))
