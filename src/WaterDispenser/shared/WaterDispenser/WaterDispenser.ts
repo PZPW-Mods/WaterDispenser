@@ -61,8 +61,9 @@ export class WaterDispenser {
     public setNewType(newType: WaterDispenserType) {
         const spriteName = WaterDispenser.WaterDispenserTypes[newType][this.facing]
         if (spriteName) {
+            this.type = newType
             this.isoObject.getModData().waterDispenserInfo = {
-                type: newType,
+                type: this.type,
                 facing: this.facing
             }
             this.isoObject.setSpriteFromName(spriteName)
@@ -104,7 +105,7 @@ export class WaterDispenser {
                 const type = entry[0] as WaterDispenserType
                 const values = entry[1] as IWaterDispenser
                 for (const facing of Object.keys(values)) {
-                    if (values[facing] == spriteName) {
+                    if (values[facing] === spriteName) {
                         return { facing: facing as Facing, type }
                     }
                 }
@@ -117,7 +118,7 @@ export class WaterDispenser {
         if (!_instanceof_(isoSquare, "IsoGridSquare")) return
 
         const objects = isoSquare.getObjects()
-        for (let i = 0; i < objects.size() - 1; i++) {
+        for (let i = 0; i < objects.size(); i++) {
             const obj = objects.get(i)
             const info = WaterDispenser.GetWaterDispenserInfo(obj)
             if (info) {
