@@ -1,4 +1,5 @@
 import { isClient, IsoGridSquare, IsoObject, isServer, ZombRand, _instanceof_ } from "PipeWrench"
+import { loadGridSquare } from "PipeWrench-Events"
 
 type Facing = "N" | "E" | "S" | "W"
 type WaterDispenserType = "Vanilla" | "None" | "Empty" | "Water"
@@ -51,6 +52,10 @@ export class WaterDispenser {
         this.isoObject = isoObject
         this.facing = facing
         this.type = type
+
+        if (!this.isoObject.getModData().waterDispenserInfo) {
+            this.isoObject.getModData().waterDispenserInfo = { type, facing }
+        }
     }
 
     public setNewType(newType: WaterDispenserType) {
@@ -72,10 +77,11 @@ export class WaterDispenser {
 
     public setWaterAmount(amount: number) {
         this.isoObject.setWaterAmount(amount)
+        this.isoObject.transmitModData()
     }
 
     public randomizeWaterAmount() {
-        this.isoObject.setWaterAmount(ZombRand(WaterDispenser.MaxWaterAmount))
+        this.setWaterAmount(ZombRand(WaterDispenser.MaxWaterAmount))
     }
 
     public getTainted(): boolean {
@@ -84,6 +90,7 @@ export class WaterDispenser {
 
     public setTainted(tainted: boolean) {
         this.isoObject.setTaintedWater(tainted)
+        this.isoObject.transmitModData()
     }
 
     /** @noSelf */
@@ -119,3 +126,13 @@ export class WaterDispenser {
         }
     }
 }
+
+loadGridSquare.addListener((square) => {
+    const waterDispenser = WaterDispenser.GetWaterDispenserOnSquare(square)
+
+    if (waterDispenser && waterDispenser.Type === "Vanilla") {
+        waterDispenser.setNewType("Water")
+        waterDispenser.randomizeWaterAmount()
+        waterDispenser.setTainted(false)
+    }
+})
