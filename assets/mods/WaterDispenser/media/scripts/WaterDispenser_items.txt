@@ -18,8 +18,8 @@ module WaterDispenser {
         WorldStaticModel        = WaterJugEmpty_Ground,
         ReplaceInSecondHand     = Bag_WaterJugEmpty_LHand holdingbagleft,
         ReplaceInPrimaryHand    = Bag_WaterJugEmpty_RHand holdingbagright,
-        Tags                    = EmptyPetrol,
         ReplaceTypes            = PetrolSource WaterJugPetrolFull;WaterSource WaterJugWaterFull,
+        Tags                    = DispenserWaterJug;EmptyPetrol,
     }
 
     item WaterJugWaterFull
@@ -39,6 +39,7 @@ module WaterDispenser {
         WorldStaticModel        = WaterJugWaterFull_Ground,
         ReplaceInSecondHand     = Bag_WaterJugWaterFull_LHand holdingbagleft,
         ReplaceInPrimaryHand    = Bag_WaterJugWaterFull_RHand holdingbagright,
+        Tags                    = DispenserWaterJug,
     }
 
     item WaterJugPetrolFull
