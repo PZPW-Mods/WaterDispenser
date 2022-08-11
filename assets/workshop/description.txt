@@ -1,5 +1,7 @@
 [h2]Features[/h2]
+
 In this mod I try to make everything [b]as Vanilla as possible[/b].
+- Mod rewritten in Typescript using PZPW.
 - Dispenser have 250 unit of water like the vanilla dispenser.
 - Water Jug can be filled with gasoline for a total of 250 units.
 - Vanilla Dispenser automatically converted to custom when loaded in the world.
@@ -8,6 +10,7 @@ In this mod I try to make everything [b]as Vanilla as possible[/b].
 - New disabler mod to revert to vanilla water dispenser.
 
 [h2]Disable/Revert to vanilla[/h2]
+
 This feature will only work for game 41.72+.
 - Enable `WaterDispenserDisabler` mod (keep it enabled) and disable `WaterDispenser` mod.
 - When a custom dispenser is found it will revert back to vanilla.
@@ -22,8 +25,11 @@ This feature will only work for game 41.72+.
 - Polish (PL) by Insers
 - Russian (RU) by BUGS
 
-[h2]My Mods[/h2]
-[url=https://steamcommunity.com/id/konijima/myworkshopfiles/?appid=108600]My Workshop[/url]
+[h2]Support me[/h2]
+[url=https://www.patreon.com/Konijima]Become a Patreon[/url]
 
-[h3]Github:[/h3]
-https://github.com/Konijima/WaterDispenser
+[h2]Check out my other mods[/h2]
+[url=https://steamcommunity.com/id/konijima/myworkshopfiles/?appid=108600]My Steam Workshop[/url]
+
+[h3]WaterDispenser on Github:[/h3]
+https://github.com/PZPW-Mods/WaterDispenser
