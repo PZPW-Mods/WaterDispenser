@@ -1,5 +1,6 @@
 # PZPW Template
 Main template used by PZPW when setting up a new project.
+[![Build](https://github.com/PZPW-Mods/WaterDispenser/actions/workflows/Build.yml/badge.svg)](https://github.com/PZPW-Mods/WaterDispenser/actions/workflows/Build.yml)
 
 <br>
 
