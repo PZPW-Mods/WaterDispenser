@@ -1,9 +1,10 @@
 {
-  "name": "pzpw-template",
+  "name": "waterdispenser",
   "version": "1.0.0",
-  "description": "Main template used by PZPW when setting up a new project.",
+  "description": "PZPW remake of WaterDispenser by Konijima",
   "main": "",
   "scripts": {
+    "build": "tsc --p build.tsconfig.json",
     "clean": "del-cli --force ./dist ./workshop ./declaration",
     "build-compiler": "tsc --project ./.compiler/",
     "compile-distribution": "node ./.compiler/compiler.js distribution",
@@ -34,9 +35,9 @@
   },
   "homepage": "https://github.com/Konijima/PipeWrenchTemplate",
   "dependencies": {
-    "PipeWrench": "github:asledgehammer/PipeWrench#stable",
-    "PipeWrench-Events": "github:asledgehammer/PipeWrench-Events",
-    "PipeWrench-Utils": "github:asledgehammer/PipeWrench-Utils"
+    "PipeWrench": "github:Konijima/pzpw-pipewrench#stable",
+    "PipeWrench-Events": "github:Konijima/pzpw-pipewrench-events#stable",
+    "PipeWrench-Utils": "github:Konijima/pzpw-pipewrench-utils#stable"
   },
   "devDependencies": {
     "ansi": "^0.3.1",
