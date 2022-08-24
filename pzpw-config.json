@@ -1,33 +1,34 @@
 {
-    "mods": {
-        "WaterDispenser": {
-            "name": "Water Dispenser",
-            "description": "Realistic Water Dispenser.",
-            "pack": "water_dispenser",
-            "tiledef": "water_dispenser 866"
-        },
-        "WaterDispenserDisabler": {
-            "name": "Water Dispenser Disabler",
-            "description": "Enable this mod, disable WaterDispenser and custom dispenser will turn back to vanilla."
-        }
+  "$schema": "https://raw.githubusercontent.com/Konijima/pzpw-config-schema/master/pzpw-config.schema.json",
+  "mods": {
+    "WaterDispenser": {
+      "name": "Water Dispenser",
+      "description": "Realistic Water Dispenser.",
+      "pack": "water_dispenser",
+      "tiledef": "water_dispenser 866"
     },
-    "workshop": {
-        "id": 2687798127,
-        "title": "Water Dispenser",
-        "visibility": "public",
-        "mods": [
-            "WaterDispenser",
-            "WaterDispenserDisabler"
-        ],
-        "tags": [
-            "Build 41",
-            "Food",
-            "Items",
-            "Misc",
-            "Models",
-            "Multiplayer",
-            "Realistic"
-        ],
-        "author": "Konijima"
+    "WaterDispenserDisabler": {
+        "name": "Water Dispenser Disabler",
+        "description": "Enable this mod, disable WaterDispenser and custom dispenser will turn back to vanilla."
     }
+  },
+  "workshop": {
+    "id": 2687798127,
+    "title": "Water Dispenser",
+    "visibility": "public",
+    "mods": [
+        "WaterDispenser",
+        "WaterDispenserDisabler"
+    ],
+    "tags": [
+        "Build 41",
+        "Food",
+        "Items",
+        "Misc",
+        "Models",
+        "Multiplayer",
+        "Realistic"
+    ],
+    "author": "Konijima"
+  }
 }
