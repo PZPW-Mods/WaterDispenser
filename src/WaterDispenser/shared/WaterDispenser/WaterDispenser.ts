@@ -1,5 +1,5 @@
-import { isClient, IsoGridSquare, IsoObject, isServer, ZombRand, _instanceof_ } from "PipeWrench"
-import { loadGridSquare } from "PipeWrench-Events"
+import { isClient, IsoGridSquare, IsoObject, isServer, ZombRand, _instanceof_ } from "@asledgehammer/pipewrench"
+import { loadGridSquare } from "@asledgehammer/pipewrench-events"
 
 type Facing = "N" | "E" | "S" | "W"
 type WaterDispenserType = "Vanilla" | "None" | "Empty" | "Water"
@@ -106,7 +106,7 @@ export class WaterDispenser {
                 const type = entry[0] as WaterDispenserType
                 const values = entry[1] as IWaterDispenser
                 for (const facing of Object.keys(values)) {
-                    if (values[facing] === spriteName) {
+                    if (values[facing] == spriteName) {
                         return { facing: facing as Facing, type }
                     }
                 }
@@ -133,7 +133,7 @@ loadGridSquare.addListener((square) => {
     if (isServer() || !isClient()) {
         const waterDispenser = WaterDispenser.GetWaterDispenserOnSquare(square)
     
-        if (waterDispenser && waterDispenser.Type === "Vanilla") {
+        if (waterDispenser && waterDispenser.Type == "Vanilla") {
             waterDispenser.setNewType("Water")
             waterDispenser.randomizeWaterAmount()
             waterDispenser.setTainted(false)

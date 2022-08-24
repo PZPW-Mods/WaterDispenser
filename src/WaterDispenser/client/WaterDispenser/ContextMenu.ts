@@ -1,6 +1,5 @@
-import { ArrayList, DrainableComboItem, getSpecificPlayer, getText, getTextManager, InventoryItem, ISContextMenu, IsoGridSquare, IsoPlayer, ISTimedActionQueue, ISToolTip, luautils, _instanceof_ } from "PipeWrench"
-import { onFillWorldObjectContextMenu } from "PipeWrench-Events"
-import { getGlobal } from "PipeWrench-Utils"
+import { ArrayList, DrainableComboItem, getSpecificPlayer, getText, getTextManager, InventoryItem, ISContextMenu, IsoGridSquare, IsoPlayer, ISTimedActionQueue, ISToolTip, luautils, _instanceof_ } from "@asledgehammer/pipewrench"
+import { onFillWorldObjectContextMenu } from "@asledgehammer/pipewrench-events"
 import { WaterDispenser } from "../../shared/WaterDispenser/WaterDispenser"
 import { PlaceWaterJugAction } from "./TimedActions/PlaceWaterJugAction"
 import { TakeWaterJugAction } from "./TimedActions/TakeWaterJugAction"
@@ -23,13 +22,13 @@ onFillWorldObjectContextMenu.addListener((playerNum: number, context: ISContextM
     const player = getSpecificPlayer(playerNum)
     if (player.getVehicle()) return
 
-    const clickedSquare = getGlobal("clickedSquare") as IsoGridSquare
+    const clickedSquare = (globalThis as any).clickedSquare as IsoGridSquare
     const waterDispenser = WaterDispenser.GetWaterDispenserOnSquare(clickedSquare)
     
     if (waterDispenser) {
         const inventory = player.getInventory()
         
-        if (waterDispenser.Type === "None") {
+        if (waterDispenser.Type == "None") {
             const waterJugs = new ArrayList()
             inventory.getAllTag("DispenserWaterJug", waterJugs)
 

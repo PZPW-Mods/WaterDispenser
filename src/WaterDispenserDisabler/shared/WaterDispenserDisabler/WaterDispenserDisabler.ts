@@ -1,5 +1,5 @@
-import { getActivatedMods, isClient, IsoObject, isServer } from "PipeWrench"
-import { loadGridSquare } from "PipeWrench-Events"
+import { getActivatedMods, isClient, IsoObject, isServer } from "@asledgehammer/pipewrench"
+import { loadGridSquare } from "@asledgehammer/pipewrench-events"
 
 if (getActivatedMods().contains("WaterDispenser") === false) {
 

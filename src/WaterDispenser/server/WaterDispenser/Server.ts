@@ -1,5 +1,5 @@
-import { getSquare } from "PipeWrench";
-import { onClientCommand, onWaterAmountChange } from "PipeWrench-Events";
+import { getSquare } from "@asledgehammer/pipewrench";
+import { onClientCommand, onWaterAmountChange } from "@asledgehammer/pipewrench-events";
 import { WaterDispenser } from "../../shared/WaterDispenser/WaterDispenser";
 
 onWaterAmountChange.addListener((isoObject, waterAmount) => {
@@ -15,7 +15,7 @@ onClientCommand.addListener((module, command, player, args) => {
     const square = getSquare(args.x, args.y, args.z)
     const waterDispenser = WaterDispenser.GetWaterDispenserOnSquare(square)
 
-    if (command === "PlaceBottle" && waterDispenser) {
+    if (command == "PlaceBottle" && waterDispenser) {
         if (args.amount < 1) {
             waterDispenser.setNewType("Empty")
             waterDispenser.setWaterAmount(0)
@@ -28,7 +28,7 @@ onClientCommand.addListener((module, command, player, args) => {
         }
     }
 
-    if (command === "TakeBottle" && waterDispenser) {
+    if (command == "TakeBottle" && waterDispenser) {
         waterDispenser.setNewType("None")
         waterDispenser.setWaterAmount(0)
         waterDispenser.setTainted(false)

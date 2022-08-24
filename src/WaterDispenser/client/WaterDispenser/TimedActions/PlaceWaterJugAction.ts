@@ -1,4 +1,4 @@
-import { DrainableComboItem, InventoryItem, ISBaseTimedAction, ISLogSystem, IsoPlayer, ISTimedActionQueue, Metabolics, sendClientCommand, _instanceof_ } from "PipeWrench"
+import { DrainableComboItem, InventoryItem, ISBaseTimedAction, ISLogSystem, IsoPlayer, ISTimedActionQueue, Metabolics, sendClientCommand, _instanceof_ } from "@asledgehammer/pipewrench"
 import { WaterDispenser } from "../../../shared/WaterDispenser/WaterDispenser"
 
 export function PlaceWaterJugAction(character: IsoPlayer, waterDispenser: WaterDispenser, waterJugItem: InventoryItem) {
